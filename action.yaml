@@ -39,6 +39,4 @@ runs:
         echo "${{ inputs.parameters }}" > data.json
         cat data.json
         curl -k -X POST "${{ inputs.url }}/rest/v1.0/releases?projectName=${PROJECT}&releaseName=${RELEASE}" \
-          -u ${{ inputs.username }}:${{ inputs.user-token }} \
-          -H "accept: application/json" \
-          -d @data.json
+          -u ${{ inputs.username }}:${{ inputs.user-token }}
