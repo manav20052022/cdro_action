@@ -29,8 +29,8 @@ runs:
   steps:
     - id: invoke-cdro-action
       name: invoke-cdro-action
-      #uses: docker://fedora:39
-      #shell: sh
+      uses: docker://fedora:39
+      shell: sh
       run: |
         #set -x
         #dnf -y install jq
