@@ -50,7 +50,7 @@ In your YAML file, add:
 
     steps: 
       - name: Run CDRO release pipeline
-        uses: manav20052022/cdro-action@v0.5
+        uses: manav20052022/cdro-action@v0.6
         with:
           url: https://sda.preview.cb-demos.io/
           username: ${{ secrets.CDRO_USERNAME }}
