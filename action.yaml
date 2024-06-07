@@ -18,10 +18,6 @@ inputs:
   release-name:
     description: 'release name'
     required: true
-  parameters:   
-    description: 'parameters as json'
-    required: false
-    default: '{}'
 
 
 runs:
@@ -32,13 +28,7 @@ runs:
       uses: docker://fedora:39
       shell: sh
       run: |
-        #set -x
-        #dnf -y install jq
-        PROJECT=${inputs.project-name }
-        RELEASE=${inputs.release-name }
-        #PROJECT=`echo "${{ inputs.project-name }}" | jq -Rr @uri`
-        #RELEASE=`echo "${{ inputs.release-name }}" | jq -Rr @uri`
-        #echo "${{ inputs.parameters }}" > data.json
-        #cat data.json
+        PROJECT=${{inputs.project-name }}
+        RELEASE=${{inputs.release-name }}
         curl -k -X POST "${{ inputs.url }}/rest/v1.0/releases?projectName=${PROJECT}&releaseName=${RELEASE}" \
           -u ${{ inputs.username }}:${{ inputs.user-token }}
