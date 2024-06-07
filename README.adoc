@@ -39,11 +39,6 @@ If not specified, uses `https://sda.preview.cb-demos.io/`.
 | Yes
 | The CD/RO Release name.
 
-| `parameters`
-| JSON
-| No
-| CD/RO pipeline parameters, formatted as JSON data in key/value pairs.
-
 |===
 
 == Usage example
@@ -55,22 +50,15 @@ In your YAML file, add:
 
     steps: 
       - name: Run CDRO release pipeline
-        uses: manav20052022/cdro-action@v0.2
+        uses: manav20052022/cdro-action@v0.5
         with:
           url: https://sda.preview.cb-demos.io/
           username: ${{ secrets.CDRO_USERNAME }}
           user-token: ${{ secrets.CDRO_USER_TOKEN }}
           project-name: MyProject
-          releaseh-name: MyRelease
-          parameters: '{\"param1\":\"val1\",\"param2\":\"val2\"}'
-      
+          release-name: MyRelease
 
 ----
-
-== License
-
-This code is made available under the 
-link:https://opensource.org/license/mit/[MIT license].
 
 == References
 
